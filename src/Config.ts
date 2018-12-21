@@ -5,6 +5,7 @@ export default class Config implements IConfig {
     operationPrefix: string;
     params: any;
     stringify: boolean | "pretty";
+    strict: boolean | false;
 
     constructor(config?: Partial<IConfig>) {
         this.set(config);
@@ -28,4 +29,5 @@ export interface IConfig {
     operationPrefix: string; // the prefix to indicate a property is an operation like $import.
     params: any; // object containing parameters available as $params in $expression operations.
     stringify: boolean | "pretty"; // should the output be stringified?
+    strict: boolean | false; // should only process strict values? (default: false)
 }

@@ -261,7 +261,7 @@ export default class Processor {
     }
 
     processSource(source: any, target?: any) {
-        if (isObject(source)) {
+        if (isObject(source, this._config.strict)) {
             return this._processObject(source, target);
         } else if (Array.isArray(source)) {
             return this._processArray(source, target);
