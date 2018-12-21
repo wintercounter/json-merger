@@ -16,6 +16,7 @@ Table of Contents:
   * [`operationPrefix: string`](#operationprefix-string)
   * [`params: object`](#params-object)
   * [`stringify: boolean`](#stringify-boolean)
+  * [`strict: boolean`](#strict-boolean)
 * [Operations](#operations)
   * [`$import`](#import)
   * [`$merge`](#merge)
@@ -249,6 +250,9 @@ Object that will be available in [`$expression`](#expression) operations as `$pa
 
 ### `stringify: boolean | "pretty"`
 Set this property to `true` to stringify the JSON result. Set the property to `"pretty"` if the output should be pretty printed.
+
+### `strict: boolean | false`
+Set this property to `true` to only process strict values `['String', 'Array', 'Object', 'Number', 'Symbol', 'Boolean']`. This way it will leave user defined functions/instances alone.
 
 Operations
 ----------
@@ -752,7 +756,7 @@ var result = jsonMerger.mergeFiles(["a.json", "b.json"]);
 
 #### Insert before the last item
 
-A negative `$import.index` can be used, indicating an offset from the end of the array. 
+A negative `$import.index` can be used, indicating an offset from the end of the array.
 
 **javascript**
 
