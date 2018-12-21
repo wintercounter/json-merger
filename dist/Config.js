@@ -12,6 +12,7 @@ var Config = (function () {
         this.operationPrefix = typeof config.operationPrefix === "string" ? config.operationPrefix : "$";
         this.params = config.params;
         this.stringify = config.stringify === true || config.stringify === "pretty" ? config.stringify : false;
+        this.strict = config.strict === true;
     };
     return Config;
 }());
